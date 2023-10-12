@@ -20,4 +20,17 @@ table(species_codes[sightings])
 
 Adding 1 to a POSIXct object adds a second as it is a date-time and the unit place of 1 corresponds to seconds. It is a vector object used to represent datetimes.
 
-The default origin of POSIXct objects is
+The default origin of POSIXct objects is UTC?
+
+```{r}
+#code to convert the number 0 to January 1, 2000 at noon in UTC using as.POSIXct()
+
+as.POSIXct(0,"2000-01-01 12:00", tz="UTC")
+
+```
+
+I'm not sure what vector this becomes if you take the POSIXct class away.
+
+## Question 3
+
+x is a list, y is an element, and I'm not sure what z is.
