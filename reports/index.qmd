@@ -34,3 +34,7 @@ I'm not sure what vector this becomes if you take the POSIXct class away.
 ## Question 3
 
 x is a list, y is an element, and I'm not sure what z is.
+
+## Question 4
+
+In a data frame, elements of a list are columns since there is only one row (I think). In a dataframe, length() is equivalent to nrow() because each row is one element.
