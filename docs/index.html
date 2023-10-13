@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2023-10-12">
 
-<title>Compthinking1 assessment</title>
+<title>Compthinking1 assessment - Nikita Sridhar</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Compthinking1 assessment</h1>
+<h1 class="title">Compthinking1 assessment - Nikita Sridhar</h1>
 </div>
 
 
@@ -152,12 +152,29 @@ Great Egret    Killdeer     Mallard  Marsh Wren
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>nutrient <span class="ot">&lt;-</span> <span class="st">"N_g"</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>experiment<span class="sc">$</span>nutrient</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>experiment[nutrient]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
+<pre><code>  N_g
+1 0.2
+2 0.7
+3 0.3
+4 0.2</code></pre>
 </div>
 </div>
-<p>I would use the $ operator</p>
+<p>I would use the [ ] operator. For an atomic vector, I would use [[ ]].</p>
+</section>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>penguins_by_island <span class="ot">&lt;-</span> <span class="fu">split</span>(penguins, penguins<span class="sc">$</span>island)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>mean_mass <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Biscoe =</span> <span class="fu">mean</span>(penguins_by_island<span class="sc">$</span>Biscoe<span class="sc">$</span>body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Dream =</span> <span class="fu">mean</span>(penguins_by_island<span class="sc">$</span>Dream<span class="sc">$</span>body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Torgersen =</span> <span class="fu">mean</span>(penguins_by_island<span class="sc">$</span>Torgersen<span class="sc">$</span>body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I think the above code creates a list from “penguins” with sub-lists per island and assigns this new list to “penguins_by_island”. This list is subsetted by island and body mass (variable of interest) to find the mean mass per island, disregarding NA values. I didn’t know that you can use list as a function to calculate summary statistics.</p>
 </section>
 
 </main>
