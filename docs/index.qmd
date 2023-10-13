@@ -1,5 +1,5 @@
 ---
-title: "Compthinking1 assessment"
+title: "Compthinking1 assessment - Nikita Sridhar"
 date: 2023-10-12
 format: html
 ---
@@ -52,7 +52,23 @@ experiment <- data.frame(
 
 nutrient <- "N_g"
 
-experiment$nutrient
+experiment[nutrient]
+
+
 ```
 
-I would use the \$ operator
+I would use the \[ \] operator. For an atomic vector, I would use \[\[ \]\].
+
+## Question 6
+
+```{r}
+library(palmerpenguins) 
+penguins_by_island <- split(penguins, penguins$island)
+mean_mass <- list(
+    Biscoe = mean(penguins_by_island$Biscoe$body_mass_g, na.rm = TRUE),
+    Dream = mean(penguins_by_island$Dream$body_mass_g, na.rm = TRUE),
+    Torgersen = mean(penguins_by_island$Torgersen$body_mass_g, na.rm = TRUE)
+)
+```
+
+I think the above code creates a list from "penguins" with sub-lists per island and assigns this new list to "penguins_by_island". This list is subsetted by island and body mass (variable of interest) to find the mean mass per island, disregarding NA values. I didn't know that you can use list as a function to calculate summary statistics.
